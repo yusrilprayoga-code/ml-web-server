@@ -18,20 +18,17 @@ async function predictClassification(model, image) {
 
         const label = classes[isCancer ? 1 : 0];
 
-        let explanation, suggestion;
+        let suggestion;
 
         if (isCancer) {
-            explanation = 'Terdeteksi kanker kulit pada gambar yang Anda kirimkan.';
             suggestion = 'Segera berkonsultasi dengan dokter spesialis kulit terdekat.';
         } else {
-            explanation = 'Tidak terdeteksi kanker kulit pada gambar yang Anda kirimkan.';
             suggestion = 'Tetap jaga kesehatan kulit Anda.';
         }
 
         return {
             label,
             confidenceScore,
-            explanation,
             suggestion
         };
 
